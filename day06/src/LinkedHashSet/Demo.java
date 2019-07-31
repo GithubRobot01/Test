@@ -11,6 +11,10 @@ public class Demo{
             char ch=s.charAt(i);
             set.add(ch);
         }
-        System.out.println(set);
+        String s1="";
+        for (Character ch : set) {
+            s1+=ch;
+        }
+        System.out.println(s1);
     }
 }

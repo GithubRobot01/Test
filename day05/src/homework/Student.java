@@ -1,5 +1,7 @@
 package homework;
 
+import java.math.BigDecimal;
+
 public class Student {
     private String name;
     private String ID;
