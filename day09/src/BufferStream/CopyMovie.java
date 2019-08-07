@@ -1,9 +1,15 @@
 package BufferStream;
 
+
 import java.io.*;
 
 public class CopyMovie {
     public static void main(String[] args) throws IOException{
+        //分别计算四种方法复制视频需要的时间
+        long start1=System.currentTimeMillis();
+        copyMethod01();
+        long end1=System.currentTimeMillis();
+        System.out.println("共耗时:"+(end1-start1)+"毫秒");
         long start2=System.currentTimeMillis();
         copyMethod02();
         long end2=System.currentTimeMillis();
@@ -17,8 +23,9 @@ public class CopyMovie {
         long end4=System.currentTimeMillis();
         System.out.println("共耗时:"+(end4-start4)+"毫秒");
     }
-
+    //基本字节流一次读写一个字节,耗时最长
     private static void copyMethod01() throws IOException {
+
         FileInputStream fis=new FileInputStream("D:\\File\\movie.avi");
         FileOutputStream fos=new FileOutputStream("D:\\File\\copy01.avi");
         int i;
@@ -27,12 +34,13 @@ public class CopyMovie {
         }
         fis.close();
         fos.close();
-        //共耗时:171289毫秒
     }
+    //基本字节流一次读写一个字节数组
     private static void copyMethod02() throws IOException {
         FileInputStream fis=new FileInputStream("D:\\File\\movie.avi");
         FileOutputStream fos=new FileOutputStream("D:\\File\\copy02.avi");
         int len;
+        //字节数组的长度不固定,一般为1024的整数倍
         byte[] bytes=new byte[1024];
         while ((len=fis.read(bytes))!=-1){
             fos.write(bytes,0,len);
@@ -40,6 +48,7 @@ public class CopyMovie {
         fis.close();
         fos.close();
     }
+    //字节缓冲流一次读写一个字节
     private static void copyMethod03() throws IOException {
         FileInputStream fis=new FileInputStream("D:\\File\\movie.avi");
         FileOutputStream fos=new FileOutputStream("D:\\File\\copy03.avi");
@@ -52,6 +61,7 @@ public class CopyMovie {
         bis.close();
         bos.close();
     }
+    //字节缓冲流一次读写一个字节数组,耗时最短
     private static void copyMethod04() throws IOException {
         FileInputStream fis=new FileInputStream("D:\\File\\movie.avi");
         FileOutputStream fos=new FileOutputStream("D:\\File\\copy04.avi");

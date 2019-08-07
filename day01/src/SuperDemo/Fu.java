@@ -6,13 +6,16 @@ public class Fu /*extends Object*/{
     private String name;
 
     // 默认无参
-    public Fu() {
-        System.out.println("父类无参构造方法被调用!");
-    }
+//    public Fu() {
+//        System.out.println("父类无参构造方法被调用!");
+//    }
+
 
 
     //
+
     public Fu(String name) {
+        this.name=name;
         System.out.println("父类有参构造方法被调用!");
     }
 

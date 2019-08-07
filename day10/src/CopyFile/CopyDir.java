@@ -6,7 +6,7 @@ public class CopyDir {
     public static void main(String[] args) throws IOException{
         File src=new File("D:\\File");
         File dest=new File("day10",src.getName());
-        //²é¿´Ä¿µÄµØÎÄ¼ş¼ĞÊÇ·ñ´æÔÚ
+        //æŸ¥çœ‹ç›®çš„åœ°æ–‡ä»¶å¤¹æ˜¯å¦å­˜åœ¨
         if (!dest.exists()){
             dest.mkdirs();
         }
@@ -16,7 +16,7 @@ public class CopyDir {
             copyFile(file,destFile);
         }
     }
-    //×Ö½Ú»º³åÁ÷¸´ÖÆÎÄ¼ş
+    //å­—èŠ‚ç¼“å†²æµå¤åˆ¶æ–‡ä»¶
     private static void copyFile(File file, File destFile) throws IOException {
         BufferedInputStream bis=new BufferedInputStream(new FileInputStream(file));
         BufferedOutputStream bos=new BufferedOutputStream(new FileOutputStream(destFile));

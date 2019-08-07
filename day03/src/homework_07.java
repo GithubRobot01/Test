@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class homework_07 {
     public static void main(String[] args) {
         // 创建对象，并初始化数据
@@ -23,7 +21,7 @@ class Person{
        if(!(o instanceof Person))
            return false;
        Person p=(Person) o;
-        return this.age==p.age&&this.name.equals(((Person) o).name);
+        return this.age==p.age&&this.name.equals(p.name);
 
     }
 
