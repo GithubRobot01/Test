@@ -27,7 +27,7 @@ public class Demo {
             */
 
         MyAnno anno = demoClass.getAnnotation(MyAnno.class);
-        //3.调用注解对象中定义的丑行方法,获取返回值
+        //3.调用注解对象中定义的抽象方法,获取返回值
         String className=anno.className();
         String methodName=anno.methodName();
 
